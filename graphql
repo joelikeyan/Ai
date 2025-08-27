@@ -1,0 +1,4 @@
+.
+├─ any2any_ai.py        # main CLI (TTS, STT, text tools, speech-out by default)
+├─ .gitignore           # Python + Node + Windows + VSCode + AI extras
+└─ .gitattributes       # Git LFS rules for models/data (optional)
