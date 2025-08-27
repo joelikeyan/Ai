@@ -1,0 +1,146 @@
+# ========================
+# OS / Editor cruft
+# ========================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+*.code-workspace
+
+# ========================
+# Python
+# ========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+.eggs/
+dist/
+build/
+pip-wheel-metadata/
+*.manifest
+*.spec
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+*.env
+
+# ========================
+# Node / JavaScript
+# ========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ========================
+# AI / ML artifacts
+# ========================
+*.ckpt
+*.pt
+*.pth
+*.h5
+*.onnx
+*.tflite
+*.safetensors
+*.weights
+*.bin
+*.pkl
+*.joblib
+*.npz
+*.npy
+
+# Datasets & cache
+data/
+datasets/
+*.csv
+*.tsv
+*.parquet
+*.jsonl
+*.zip
+*.tar
+*.gz
+.cache/
+wandb/
+mlruns/
+output/
+checkpoints/
+
+# ========================
+# Logs & Temp
+# ========================
+*.log
+*.out
+*.tmp
+*.bak
+*.pid
+
+# ========================
+# Misc
+# ========================
+*.sqlite3
+*.db
+*.rdb
+*.lock
+*.crt
+*.pem
+# --- AI / ML extras ---
+# never commit secrets
+.env
+*.env
+
+# big artifacts (use LFS or keep out)
+*.safetensors
+*.pt
+*.ckpt
+*.onnx
+*.parquet
+*.csv
+*.jsonl
+*.zip
+data/
+datasets/
+# --- AI / ML extras ---
+# never commit secrets
+.env
+*.env
+
+# big artifacts (use LFS or keep out)
+*.safetensors
+*.pt
+*.ckpt
+*.onnx
+*.parquet
+*.csv
+*.jsonl
+*.zip
+data/
+datasets/
+# --- AI / ML extras ---
+# never commit secrets
+.env
+*.env
+
+# big artifacts (use LFS or keep out)
+*.safetensors
+*.pt
+*.ckpt
+*.onnx
+*.parquet
+*.csv
+*.jsonl
+*.zip
+data/
+datasets/
