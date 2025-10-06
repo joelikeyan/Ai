@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  multimodal-ai:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+      - ./temp:/app/temp
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+      - DEBUG=false
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
