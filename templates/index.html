@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimodal AI System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body class="theme-{{ config.theme }}">
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-robot"></i> Multimodal AI Assistant</h1>
+            <div class="controls">
+                <button id="voiceBtn" class="btn btn-voice" title="Voice Input">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button id="settingsBtn" class="btn btn-settings" title="Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <button id="clearBtn" class="btn btn-clear" title="Clear Conversation">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <div id="chatMessages" class="chat-messages">
+                <div class="message system-message">
+                    <div class="message-content">
+                        <i class="fas fa-info-circle"></i>
+                        Welcome! I'm your multimodal AI assistant. You can:
+                        <ul>
+                            <li>Type messages and I'll respond</li>
+                            <li>Upload images for analysis</li>
+                            <li>Use voice input by clicking the microphone</li>
+                            <li>I'll speak my responses aloud</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-container">
+                    <div class="file-upload">
+                        <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                        <button id="imageBtn" class="btn btn-image" title="Upload Image">
+                            <i class="fas fa-image"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="text-input-container">
+                        <textarea id="messageInput" placeholder="Type your message here..." rows="1"></textarea>
+                        <button id="sendBtn" class="btn btn-send">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="voice-controls" id="voiceControls" style="display: none;">
+                    <div class="recording-indicator">
+                        <i class="fas fa-circle recording"></i>
+                        <span>Recording... Speak now</span>
+                    </div>
+                    <button id="stopRecordingBtn" class="btn btn-stop">
+                        <i class="fas fa-stop"></i> Stop
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Settings Modal -->
+        <div id="settingsModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Settings</h2>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-group">
+                        <label>
+                            <input type="checkbox" id="autoSpeak" {{ 'checked' if config.auto_speak else '' }}>
+                            Auto-speak responses
+                        </label>
+                    </div>
+                    <div class="setting-group">
+                        <label>
+                            <input type="checkbox" id="autoPlayAudio" {{ 'checked' if config.auto_play_audio else '' }}>
+                            Auto-play audio files
+                        </label>
+                    </div>
+                    <div class="setting-group">
+                        <label for="voiceSelect">Voice:</label>
+                        <select id="voiceSelect">
+                            <option value="">Default Voice</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="themeSelect">Theme:</label>
+                        <select id="themeSelect">
+                            <option value="light" {{ 'selected' if config.theme == 'light' else '' }}>Light</option>
+                            <option value="dark" {{ 'selected' if config.theme == 'dark' else '' }}>Dark</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="saveSettings" class="btn btn-primary">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
